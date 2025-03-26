@@ -1,0 +1,23 @@
+{
+  "name": "okr-helper",
+  "version": "1.0.0",
+  "main": "index.js",
+  "workspaces": [
+    "frontend",
+    "backend"
+  ],
+  "scripts": {
+    "frontend:dev": "npm run dev --workspace=frontend",
+    "frontend:build": "npm run build --workspace=frontend",
+    "backend:dev": "cd backend && poetry run uvicorn main:app --reload",
+    "backend:start": "cd backend && poetry run uvicorn main:app",
+    "dev": "concurrently \"npm run frontend:dev\" \"npm run backend:dev\""
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "devDependencies": {
+    "turbo": "^2.4.4"
+  }
+}

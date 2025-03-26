@@ -1,0 +1,25 @@
+{
+  "version": 2,
+  "builds": [
+    {
+      "src": "frontend/package.json",
+      "use": "@vercel/react",
+      "config": {
+        "buildCommand": "npm run frontend:build",
+        "outputDirectory": "build"
+      }
+    },
+    {
+      "src": "backend/main.py",
+      "use": "vercel-python@0.4.0",
+      "config": { "runtime": "python3.13" }
+    }
+  ],
+  "routes": [
+    { "src": "/(.*)", "dest": "backend/main.py" },
+    { "src": "/(.*)", "dest": "frontend/build/index.html" }
+  ],
+  "env": {
+    "PYTHON_VERSION": "3.13"
+  }
+}
