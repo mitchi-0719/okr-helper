@@ -4,6 +4,7 @@ from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel
 from typing import List
 import uvicorn
+from mangum import Mangum
 
 app = FastAPI()
 
@@ -39,6 +40,8 @@ async def get_objectives(data: TestMessage):
 async def get_key_results(data: TestMessage):
     return await gemini.key_results(data.texts)
 
+
+handler = Mangum(app)
 
 if __name__ == "__main__":
     uvicorn.run(app, host="127.0.0.1", port=8000, log_level="debug")
