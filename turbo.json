@@ -14,6 +14,6 @@
       "dependsOn": ["build"]
     }
   },
-  "globalEnv": ["GEMINI_API_KEY", "PYTHON_VERSION=3.13"],
+  "globalEnv": ["GEMINI_API_KEY", "PYTHON_VERSION"],
   "globalDependencies": ["./.env"]
 }
