@@ -11,7 +11,7 @@
     },
     {
       "src": "backend/main.py",
-      "use": "vercel-python@0.4.0",
+      "use": "@vercel/python",
       "config": { "runtime": "python3.13" }
     }
   ],
