@@ -16,7 +16,7 @@
     }
   ],
   "routes": [
-    { "src": "/(.*)", "dest": "backend/main.py" },
+    { "src": "/api/(.*)", "dest": "backend/main.py" },
     { "src": "/(.*)", "dest": "frontend/build/index.html" }
   ],
   "env": {
