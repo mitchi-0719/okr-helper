@@ -25,6 +25,11 @@ class TestMessage(BaseModel):
     texts: List[str]
 
 
+@app.get("/")
+async def root():
+    return {"message": "Hello World"}
+
+
 @app.post("/objectives")
 async def get_objectives(data: TestMessage):
     return await gemini.objectives(data.texts)
