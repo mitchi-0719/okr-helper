@@ -35,15 +35,5 @@ async def get_key_results(data: TestMessage):
     return await gemini.key_results(data.texts)
 
 
-def test():
-    contents = []
-    while True:
-        content = input("Enter content: ")
-        if not content:
-            break
-        contents.append(content)
-    print(gemini.objectives(contents))
-
-
 if __name__ == "__main__":
     uvicorn.run(app, host="127.0.0.1", port=8000, log_level="debug")
